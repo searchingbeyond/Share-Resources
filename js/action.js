@@ -61,6 +61,9 @@ let Right_data = {
 		"CI框架":"http://codeigniter.org.cn/",
 		"Yii框架":"http://www.yiichina.com/",
 		"Yii高级":"http://www.yii-china.com/doc/yii2-windows.html?id=286",
+		"phpspider":"http://www.beanbun.org/#/",
+		"Swoole":"https://wiki.swoole.com/",
+		"Workerman":"http://www.workerman.net/"
 	},
 	"Python":{
 		
@@ -109,22 +112,17 @@ $(document).ready(function(){
 			for(let item in data_content){
 				let a = document.createElement("a");
 				let link = data_content[item];
+				$(a).html(item).appendTo($("#content"));
 				$(a).on("click",function(){
 					window.location.href=link;
-				})
-				$(a).html(item).appendTo($("#content"));
+				});
+				$(a).on("mouseenter",function(){
+					$(this).addClass("active");
+				});
+				$(a).on("mouseout",function(){
+					$(this).removeClass("active");
+				});
 			}
-			$("a").css({
-				"width":"6em",
-				"height":"1.5em",
-				"line-height":"1.5em",
-				"text-align":"center",
-				"border":"1px solid #ddd",
-				"border-radius":"5px",
-				"margin":"1em 1em",
-				"display":"inline-block",
-				"padding":"0.5em",
-			})
-		})
+		});
 	})
 });
